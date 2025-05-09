@@ -1,18 +1,23 @@
 import s from './SearchBar.module.css'
 import { MdImageSearch } from "react-icons/md";
 import toast from 'react-hot-toast';
+import { FormEvent } from 'react';
 
-const SearchBar = ({ setQuery }) => {
-    const handleSubmit = e => {
+type Props = {
+    setQuery: (value: string) => void;
+};
+
+const SearchBar = ({ setQuery }: Props) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const form = e.target;
-        const query = form.elements.query.value.trim();
-        if (!query) {
+        const form = e.currentTarget;
+        const query = form.elements.namedItem('query') as HTMLInputElement;
+        if (!query || !query.value.trim()) {
             return toast.error(
                 'The field is empty, enter text to search for an image.'
             );
         }
-        setQuery(query);
+        setQuery(query.value.trim());
         form.reset();
     };
     return (

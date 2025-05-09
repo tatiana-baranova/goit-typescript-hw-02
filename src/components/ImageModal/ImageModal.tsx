@@ -2,9 +2,14 @@ import { useEffect } from "react";
 import Modal from 'react-modal';
 import { SlClose } from "react-icons/sl";
 import s from './ImageModal.module.css';
+import { Image } from "../App/App.types";
 
-
-const ImageModal = ({  isOpen, closeModal, image  }) => {
+type Props = {
+    isOpen: boolean;
+    image: Image | null;
+    closeModal: () => void;
+};
+const ImageModal = ({  isOpen, closeModal, image  }: Props) => {
     useEffect(() => {
     Modal.setAppElement('#root');
 }, []);
