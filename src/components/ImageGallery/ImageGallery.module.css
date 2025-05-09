@@ -1,0 +1,16 @@
+.listCard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+}
+
+.card {
+    width: 260px;
+    height: 260px;
+}

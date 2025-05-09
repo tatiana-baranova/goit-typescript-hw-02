@@ -1,0 +1,14 @@
+.error {
+    position: fixed;
+    top: 25%;
+    right: 5%;
+    background: red;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    width: 220px;
+    height: 50px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+}
